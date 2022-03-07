@@ -1,0 +1,23 @@
+html, head, body, section, article, footer {
+
+  margin: 0;
+  border: 0;
+  padding: 0;
+
+  font: inherit;
+
+}
+
+li {
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+body > text {
+  line-height: 1.5;
+}
+
+img {
+  width: auto;
+}

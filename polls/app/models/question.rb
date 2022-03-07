@@ -10,7 +10,7 @@ class Question < ApplicationRecord
   has_many :answer_choices,
     primary_key: :id,
     foreign_key: :question_id,
-    class_name: :answer_choice
+    class_name: :AnswerChoice
 
   has_many :responses,
     through: :answer_choices,

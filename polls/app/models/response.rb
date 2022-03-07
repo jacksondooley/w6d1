@@ -4,11 +4,12 @@ class Response < ApplicationRecord
     validate :not_duplicate_response
 
     def sibling_responses
-      question.responses.where.not(:self.id)
+      debugger
+      self.question.responses.where.not(id: self.id)
     end
 
     def respondent_already_answered?
-      sibling_responses.exists?(self.id)
+      self.sibling_responses.exists?(self.id)
     end
 
     belongs_to :answer_choice,
@@ -28,7 +29,7 @@ class Response < ApplicationRecord
   private
   def not_duplicate_response
     if respondent_already_answered?
-      errors[:base] << 'Response alreaddy entered'
+      errors[:base] << 'Response already entered'
     end
   end
 
